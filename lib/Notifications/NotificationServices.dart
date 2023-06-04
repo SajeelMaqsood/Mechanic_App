@@ -155,6 +155,7 @@ class NotificationServices {
 
         String User_name = dataSnapShot.child('user_name').value.toString();
         String User_phone = dataSnapShot.child('user_phone').value.toString();
+        String photo=dataSnapShot.child('user_photo').value.toString();
 
         UserDetails userDetails = UserDetails();
         userDetails.user_request_id = userRequestId;
@@ -163,6 +164,7 @@ class NotificationServices {
         // userDetails.payment_method = paymentMethod;
         userDetails.User_name = User_name;
         userDetails.User_phone = User_phone;
+        userDetails.User_photo=photo;
 
         print("Information :: ");
         print(userDetails.User_address);

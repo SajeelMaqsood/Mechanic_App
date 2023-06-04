@@ -8,7 +8,8 @@ class UserDetails
   // String payment_method;
   String ?User_name;
   String ?User_phone;
+  String? User_photo;
   String payment_method="Cash";
 
-  UserDetails({this.User_address,this.userLoc,this.User_name,this.User_phone,this.user_request_id});
+  UserDetails({this.User_address,this.userLoc,this.User_name,this.User_phone,this.user_request_id,this.User_photo});
  }

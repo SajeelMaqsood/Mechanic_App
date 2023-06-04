@@ -347,7 +347,7 @@ class _MechanicInfoState extends State<MechanicInfo> {
     };
 
     mechanicRef.child(userId).child("mechanic_details").set(mechanicInfo);
-    // Navigator.pushNamedAndRemoveUntil(context, MainScreen.idScreen, (route) => false);
+     Navigator.pushNamedAndRemoveUntil(context, MainScreen.idScreen, (route) => false);
   }}
 
   void _showBottomSheet(BuildContext context) {

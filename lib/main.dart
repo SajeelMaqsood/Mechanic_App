@@ -56,8 +56,8 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        // initialRoute:FirebaseAuth.instance.currentUser== null?LoginScreen.idScreen: MainScreen.idScreen,
-        initialRoute:MechanicInfo.idScreen,
+        initialRoute:FirebaseAuth.instance.currentUser== null?LoginScreen.idScreen: MainScreen.idScreen,
+        // initialRoute:MechanicInfo.idScreen,
 
         routes: {
            RegisterationScreen.idScreen: (context)=> RegisterationScreen(),

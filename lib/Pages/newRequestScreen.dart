@@ -17,6 +17,7 @@ import '../Assistants/assistantMethod.dart';
 import '../Assistants/mapKitAssistant.dart';
 import '../configMap.dart';
 import '../main.dart';
+import 'chatScreen.dart';
 
 
 class NewRequestScreen extends StatefulWidget {
@@ -191,7 +192,16 @@ class _NewRequestScreenState extends State<NewRequestScreen> {
                         Text(widget.userDetails!.User_name.toString(), style: TextStyle(fontFamily: "Brand Bold", fontSize: 24.0),),
                         Padding(
                           padding: EdgeInsets.only(right: 10.0),
-                          child: Icon(Icons.phone_android),
+                          child: GestureDetector(
+                            onTap: (){
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (_) => ChatScreen(userDetails: widget.userDetails!,)));
+
+                            },
+                              child: Icon(Icons.chat)
+                          ),
                         ),
                       ],
                     ),
@@ -418,6 +428,8 @@ class _NewRequestScreenState extends State<NewRequestScreen> {
     newRequestsRef.child(userRequestId).child("mechanic_name").set(mechanicInformation!.name);
     newRequestsRef.child(userRequestId).child("mechanic_phone").set(mechanicInformation!.phone);
     newRequestsRef.child(userRequestId).child("mechanic_id").set(mechanicInformation!.id);
+    newRequestsRef.child(userRequestId).child("mechanic_image").set(mechanicInformation!.imageurl);
+
     // mRequestRef.child(userRequestId).child("car_details").set('${driversInformation.car_color} - ${driversInformation.car_model}');
 
     Map locMap =
